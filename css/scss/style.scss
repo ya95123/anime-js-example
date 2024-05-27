@@ -3,6 +3,7 @@
   --blue: #3db3d0;
   --red: #c24347;
   --pink: #aa5a9c;
+  --white: #fff;
 }
 
 * {
@@ -20,7 +21,7 @@ body {
 
 body {
   background-color: #000;
-  color: #fff;
+  color: var(--white);
 }
 
 .banner {
@@ -55,7 +56,7 @@ body {
       width: 0%;
       height: 100%;
       border-radius: 18px;
-      background-color: #fff;
+      background-color: var(--white);
     }
 
     &-num {
@@ -70,13 +71,45 @@ body {
     width: 650px;
     max-width: 75vw;
     stroke-width: 12px;
-    // fill: var(--blue);
     stroke: var(--yellow);
     stroke-width: 15px;
     stroke-linejoin: round;
+    position: relative;
+    z-index: 1;
 
     path {
       background-color: #333;
+    }
+  }
+
+  &__meteor {
+    width: 3px;
+    height: 80px;
+    background-color: var(--white);
+    border-radius: 8px;
+    transform: rotate(60deg);
+    position: absolute;
+    // opacity: 1;
+    pointer-events: none;
+
+    &:nth-last-child(1) {
+      left: 26%;
+      top: 15%;
+    }
+
+    &:nth-last-child(2) {
+      left: 20%;
+      top: 63%;
+    }
+
+    &:nth-last-child(3) {
+      right: 20%;
+      top: 12%;
+    }
+
+    &:nth-last-child(4) {
+      right: 28%;
+      top: 68%;
     }
   }
 }
