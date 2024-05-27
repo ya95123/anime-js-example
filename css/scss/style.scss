@@ -1,3 +1,10 @@
+:root {
+  --yellow: #f7d967;
+  --blue: #3db3d0;
+  --red: #c24347;
+  --pink: #aa5a9c;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,11 +31,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   &__loading {
     width: 150px;
     height: fit-content;
     max-width: 90%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     pointer-events: none;
 
     &-frame {
@@ -51,6 +63,20 @@ body {
       margin: auto;
       font-weight: bold;
       display: block;
+    }
+  }
+
+  &__title {
+    width: 650px;
+    max-width: 75vw;
+    stroke-width: 12px;
+    // fill: var(--blue);
+    stroke: var(--yellow);
+    stroke-width: 15px;
+    stroke-linejoin: round;
+
+    path {
+      background-color: #333;
     }
   }
 }
