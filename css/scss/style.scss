@@ -88,20 +88,22 @@ body {
     height: 100%;
     position: absolute;
     z-index: 0;
+    pointer-events: none;
 
     &-path {
       width: 130%;
       position: absolute;
       left: -10%;
       top: 15%;
+      opacity: 0;
     }
 
     &-eagle {
-      width: 120px;
-      max-width: 10vw;
+      $max-width: Min(120px, 10vw);
+      width: $max-width;
       position: absolute;
       left: -10%;
-      top: 15%;
+      top: calc(15% - ($max-width / 2));
     }
   }
 }

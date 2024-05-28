@@ -5,6 +5,17 @@ let bannerTimeLine = anime.timeline({
   easing: "easeInOutQuint",
 });
 
+let bannerEagleAnime = anime({
+  targets: ".banner__bg-eagle",
+  translateX: path("x"),
+  translateY: path("y"),
+  rotate: [68, 54, 0],
+  easing: "linear",
+  duration: 6000,
+  autoplay: false,
+  loop: true,
+});
+
 bannerTimeLine
   .add({
     targets: ".banner__loading-bar",
@@ -28,16 +39,5 @@ bannerTimeLine
     strokeDashoffset: [anime.setDashoffset, 0],
     delay: anime.stagger(500),
     easing: "easeInOutSine",
+    complete: () => bannerEagleAnime.play(),
   });
-
-// TODO 觸發開始飛行
-let bannerEagle = anime({
-  targets: ".banner__bg-eagle",
-  translateX: path("x"),
-  translateY: path("y"),
-  rotate: [68, 54, 0],
-  easing: "linear",
-  duration: 6000,
-  autoplay: false,
-  loop: true,
-});
