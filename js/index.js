@@ -1,9 +1,14 @@
-let bannerAnime = anime
-  .timeline({
+let path = anime.path(".banner__bg-path path");
+
+let bannerTimeLine = anime.timeline({
+  duration: 2000,
+  easing: "easeInOutQuint",
+});
+
+bannerTimeLine
+  .add({
     targets: ".banner__loading-bar",
     width: "100%",
-    duration: 2000,
-    easing: "easeInOutQuint",
   })
   .add(
     {
@@ -25,30 +30,14 @@ let bannerAnime = anime
     easing: "easeInOutSine",
   });
 
-// banner meteor
-let meteorSetting = {
-  delay: {
-    // start: titleSetting.delay.start + titleSetting.duration,
-    start: 0,
-    stagger: 2000,
-  },
-  duration: 1000,
-  easing: "easeInOutQuad",
-};
-
-// TODO 各自分開結束 & loop / 換背景
-// anime({
-//   targets: ".banner__meteor",
-//   height: [anime.random(40, 60), anime.random(90, 100)],
-//   translateX: [0, -100],
-//   translateY: [0, 60],
-//   rotate: [60, 60],
-//   opacity: [0, 1],
-//   delay: anime.stagger(meteorSetting.delay.stagger, {
-//     start: meteorSetting.delay.start,
-//   }),
-//   duration: meteorSetting.duration,
-//   easing: meteorSetting.easing,
-//   // direction: "alternate",
-//   loop: true,
-// });
+// TODO 觸發開始飛行
+let bannerEagle = anime({
+  targets: ".banner__bg-eagle",
+  translateX: path("x"),
+  translateY: path("y"),
+  rotate: [68, 54, 0],
+  easing: "linear",
+  duration: 6000,
+  autoplay: false,
+  loop: true,
+});
