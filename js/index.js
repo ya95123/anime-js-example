@@ -36,6 +36,7 @@ bannerTimeLine
   })
   .add({
     targets: ".banner__title path",
+    opacity: [{ value: 1, duration: 0 }],
     strokeDashoffset: [anime.setDashoffset, 0],
     delay: anime.stagger(500),
     easing: "easeInOutSine",

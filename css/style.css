@@ -90,7 +90,7 @@ body {
   z-index: 1;
 }
 .banner__title path {
-  background-color: #333;
+  opacity: 0;
 }
 .banner__bg {
   width: 100%;
